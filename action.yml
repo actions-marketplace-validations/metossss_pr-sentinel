@@ -1,4 +1,4 @@
-name: 'PR-Sentinel'
+name: 'PR Sentinel Quality Gate'
 description: 'Automated, AI-augmented Pull Request Reviewer & Security Gatekeeper for Open Source Repositories'
 author: 'Open Source Maintainers'
 branding:
