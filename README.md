@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run PR-Sentinel
-        uses: <YOUR-GITHUB-USERNAME>/pr-sentinel@v1
+        uses: metossss/pr-sentinel@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           openai-api-key: ${{ secrets.OPENAI_API_KEY }} # Optional: enables AI semantic review
@@ -129,7 +129,7 @@ When a contributor opens or updates a Pull Request, PR-Sentinel generates a clea
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/<YOUR-GITHUB-USERNAME>/pr-sentinel.git
+   git clone https://github.com/metossss/pr-sentinel.git
    cd pr-sentinel
    ```
 
