@@ -1,0 +1,42 @@
+name: 'PR-Sentinel'
+description: 'Automated, AI-augmented Pull Request Reviewer & Security Gatekeeper for Open Source Repositories'
+author: 'Open Source Maintainers'
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  github-token:
+    description: 'GitHub token for reading PR data and posting review comments'
+    required: true
+    default: '${{ github.token }}'
+  openai-api-key:
+    description: 'OpenAI API key for AI-powered semantic code review (Optional)'
+    required: false
+    default: ''
+  openai-model:
+    description: 'OpenAI model for review (e.g. gpt-4o-mini, gpt-4o)'
+    required: false
+    default: 'gpt-4o-mini'
+  check-secrets:
+    description: 'Whether to scan pull request diffs for leaked secrets and API keys'
+    required: false
+    default: 'true'
+  comment-pr:
+    description: 'Whether to post an automated review summary comment on the PR'
+    required: false
+    default: 'true'
+  fail-on-secrets:
+    description: 'Fail the action status check if sensitive credentials are detected'
+    required: false
+    default: 'false'
+
+outputs:
+  secrets-detected:
+    description: 'True if sensitive credentials or tokens were found in the diff'
+  review-status:
+    description: 'Outcome of the quality gate review (passed or warning)'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

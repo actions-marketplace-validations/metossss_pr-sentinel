@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+.DS_Store
+dist/sourcemap-register.js
+dist/index.js.map
+dist/*.map

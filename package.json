@@ -1,0 +1,34 @@
+{
+  "name": "pr-sentinel",
+  "version": "1.0.0",
+  "description": "Automated, AI-augmented Pull Request Reviewer & Quality Gatekeeper for Open Source Repositories",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
+    "test": "tsx --test tests/unit.test.ts",
+    "compile": "tsc --noEmit"
+  },
+  "keywords": [
+    "github-action",
+    "pr-review",
+    "code-review",
+    "openai",
+    "codex",
+    "open-source",
+    "automation",
+    "security-scanner"
+  ],
+  "author": "Open Source Maintainers",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "openai": "^4.73.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@vercel/ncc": "^0.38.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.2"
+  }
+}
